@@ -32,6 +32,7 @@ package net.vis4.map.proj
 		
 		public function LambertEqualAreaConicProjection(south:Boolean = false) 
 		{
+			super();
 			minLatitude = MapMath.toRadians(0);
 			maxLatitude = MapMath.toRadians(90);
 			projectionLatitude1 = south ? -MapMath.QUARTERPI : MapMath.QUARTERPI;

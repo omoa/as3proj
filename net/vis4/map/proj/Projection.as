@@ -24,7 +24,10 @@ package net.vis4.map.proj
 	
 	import flash.geom.Point;
 	import flash.geom.Rectangle;
-	import net.vis4.map.*;
+	import net.vis4.map.MapMath;
+	//import net.vis4.map.*;
+	//import flash.errors.ArgumentError;
+	import ArgumentError;
 	
 	public class Projection
 	{
@@ -434,7 +437,7 @@ package net.vis4.map.proj
 		 * Returns true if the given lat/long point is visible in this projection
 		 */
 		public function inside(x:Number, y:Number):Boolean {
-			x = normalizeLongitude(Number(x*DTR-projectionLongitude) );
+			x = normalizeLongitude(x*DTR-projectionLongitude);
 			return minLongitude <= x && x <= maxLongitude && minLatitude <= y && y <= maxLatitude;
 		}
 

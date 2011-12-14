@@ -26,11 +26,13 @@ package net.vis4.map.proj
 	import flash.geom.Point;
 	import net.vis4.map.MapMath;
 	import net.vis4.map.proj.Projection;
+	//import flash.errors.ArgumentError;
+	import ArgumentError;
 
 	public class AlbersProjection extends Projection
 	{
-		private static const EPS10:Number = 1.e-10;
-		private static const TOL7:Number = 1.e-7;
+		private static const EPS10:Number = 1e-10;
+		private static const TOL7:Number = 1e-7;
 		private var ec:Number;
 		private var n:Number;
 		private var c:Number;
@@ -42,11 +44,12 @@ package net.vis4.map.proj
 		private var en:Array;
 
 		private static const N_ITER:int = 15;
-		private static const EPSILON:Number = 1.0e-7;
-		private static const TOL:Number = 1.0e-10;
+		private static const EPSILON:Number = 1e-7;
+		private static const TOL:Number = 1e-10;
 		
 		public function AlbersProjection() 
 		{
+			super();
 			minLatitude = MapMath.toRadians(0);
 			maxLatitude = MapMath.toRadians(80);
 			projectionLatitude1 = MapMath.degToRad(75.5);
@@ -143,7 +146,7 @@ package net.vis4.map.proj
 					throw new ArgumentError("0");
 				m1 = MapMath.msfn(sinphi, cosphi, es);
 				ml1 = MapMath.qsfn(sinphi, e, one_es);
-				if (secant) { /* secant cone */
+				if (secant) { //secant cone
 					var ml2:Number, m2:Number;
 
 					sinphi = Math.sin(phi2);

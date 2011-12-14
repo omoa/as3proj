@@ -426,7 +426,8 @@
 		public static function qsfn(sinphi:Number, e:Number, one_es:Number):Number {
 			var con:Number;
 
-			if (e >= 1.0e-7) {
+			//if (e >= 1.0e-7) {
+			if (e >= 0.0000001) {
 				con = e * sinphi;
 				return (one_es * (sinphi / (1. - con * con) -
 				   (.5 / e) * Math.log ((1. - con) / (1. + con))));
@@ -440,12 +441,12 @@
 		 * from "Graphics Gems", Academic Press, 1990
 		 */
 		public static function niceNumber(x:Number, round:Boolean):Number {
-			var expv:int;				/* exponent of x */
-			var f:Number;				/* fractional part of x */
-			var nf:Number;				/* nice, rounded fraction */
+			var expv:int;			// exponent of x 
+			var f:Number;			// fractional part of x 
+			var nf:Number;			// nice, rounded fraction 
 
 			expv = Math.floor(Math.log(x) / Math.log(10));
-			f = x/Math.pow(10., expv);		/* between 1 and 10 */
+			f = x/Math.pow(10., expv);		// between 1 and 10 
 			if (round) {
 				if (f < 1.5)
 					nf = 1.;

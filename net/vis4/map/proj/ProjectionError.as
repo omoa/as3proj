@@ -14,10 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package net.vis4.map.proj 
-{
+package net.vis4.map.proj {
+
+	import flash.events.ErrorEvent;
 	
-	public class ProjectionError extends Error
+	public class ProjectionError extends ErrorEvent
 	{
 		
 		public function ProjectionError(message:* = '', id:* = 0) 

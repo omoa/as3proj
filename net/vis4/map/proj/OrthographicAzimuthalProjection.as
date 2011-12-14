@@ -80,7 +80,7 @@ package net.vis4.map.proj
 				if ((sinc - 1.) > EPS10) throw new ProjectionError();
 					sinc = 1.;
 			}
-			cosc = Math.sqrt(1. - sinc * sinc); /* in this range OK */
+			cosc = Math.sqrt(1. - sinc * sinc); //in this range OK
 			if (Math.abs(rh) <= EPS10)
 				lp.y = projectionLatitude;
 			else switch (mode) {

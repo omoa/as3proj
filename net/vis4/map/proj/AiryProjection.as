@@ -35,7 +35,7 @@ package net.vis4.map.proj
 		private var cosph0:Number;
 		private var Cb:Number;
 		private var mode:int;
-		private var no_cut:Boolean = true;	/* do not cut at hemisphere limit */
+		private var no_cut:Boolean = true;	// do not cut at hemisphere limit
 
 		private static const EPS:Number = 1.e-10;
 		private static const N_POLE:int = 0;
